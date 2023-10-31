@@ -1,0 +1,5 @@
+cmake
+deepface
+dlib
+opencv-python
+telegram-python-bot
