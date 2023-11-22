@@ -55,13 +55,15 @@ def check_frame(frame):
         pass
 
 
-SOURCE_ADDRESS = 
 
 WINDOW_WIDTH = 640
 WINDOW_HEIGHT = 480
 
 cap = cv2.VideoCapture(0)
-cap.open(SOURCE_ADDRESS)
+
+# if your using your webcam, comment the below two lines
+SOURCE_ADDRESS = 'YOUR CAMERAS IP ADDRESS'  
+cap.open(SOURCE_ADDRESS)                                
 
 if not cap.isOpened():
     print("Error opening camera")
@@ -76,7 +78,6 @@ FRAME_RATE = 30                 # video frame rate 30fps
 
 target_frame = WAIT_DURATION * FRAME_RATE
 frame_counter = 0
-# loop_wait = 1 / FRAME_RATE
 
 while True:
     ret, frame = cap.read()
@@ -89,7 +90,6 @@ while True:
         try:
             threading.Thread(target=check_frame, args=(frame.copy(),), daemon=True).start()
         except Exception as e:
-            # pass 
             print(f'Error in creating new thread: {e}')
 
     frame_counter += 1
@@ -100,7 +100,6 @@ while True:
     if cv2.waitKey(1) == ord('q'):
         break
     
-    # time.sleep(loop_wait)
 
 cap.release()
 cv2.destroyAllWindows()
