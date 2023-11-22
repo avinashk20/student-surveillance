@@ -44,3 +44,8 @@ Set up your environment variables by following these steps:
 0. To start surveillance: `python main.py`
 1. To start the web interface: `python app.py`
 2. Access the web interface at `http://localhost:5000` to manage student records.
+
+### Screenshots
+![Dashboard](/screenshots/dashboard.jpg)
+![Student Form](/screenshots/student_form.jpg)
+![telegram_alert](/screenshots/alert.jpeg)
