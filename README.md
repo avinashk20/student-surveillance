@@ -36,6 +36,6 @@ The Student Surveillance project is an automated surveillance system that utiliz
 3. Install dependencies: `pip install -r requirements.txt`
 
 ### Usage
-
-1. Run the application: `python main.py`
+0. To start surveillance: `python main.py`
+1. To start the web interface: `python app.py`
 2. Access the web interface at `http://localhost:5000` to manage student records.
