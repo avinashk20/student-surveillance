@@ -35,6 +35,11 @@ The Student Surveillance project is an automated surveillance system that utiliz
 2. Navigate to the project directory: `cd student-surveillance`
 3. Install dependencies: `pip install -r requirements.txt`
 
+### Configuration
+Set up your environment variables by following these steps:
+1. Create a copy of the `.example.env` file and name it `.env`.
+2. Open the newly created `.env` file and replace the placeholder values with your own.
+
 ### Usage
 0. To start surveillance: `python main.py`
 1. To start the web interface: `python app.py`
