@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Surveillance</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
+  <script src="https://kit.fontawesome.com/61ff2b6ee8.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="{{url_for('static', filename='images/logo.png')}}" alt="camera logo" width="100px">
+    <nav>
+      <a class="nav-link btn {{'active' if active_page == 'index' else ''}}" href="/">Dashboard</a>
+      <a class="nav-link btn {{'active' if active_page == 'student_form' else ''}}" href="/add-student">Add student</a>
+    </nav>
+  </header>
+
+
+  {% with messages = get_flashed_messages(with_categories = true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="flash-msg {{category}}">
+    {% set category_icon = 'fa-circle-check' if category == 'success' else 'fa-circle-xmark' %}
+    <i class="msg-icon fa-solid {{category_icon}}"></i>
+    <div>
+      <span class="msg-title">{{category}}</span>
+      <span class="msg-content">{{message}}</span>
+    </div>
+    <button onclick="removeFlashMessage()" class="msg-close-btn">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+  {% block main %} {% endblock %}
+
+  <script>
+
+    function removeFlashMessage() {
+      document.querySelector('.flash-msg').remove();
+    }
+
+    setTimeout(() => {
+      removeFlashMessage()
+    }, 2500);
+
+  </script>
+</body>
+
+</html>

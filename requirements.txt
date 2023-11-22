@@ -1,0 +1,7 @@
+flask
+pymongo
+cloudinary
+dotenv
+deepface
+dlib
+python-telegram-bot==13.13

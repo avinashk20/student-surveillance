@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% set active_page = "student_form" %}
+
+{% block main %}
+<main>
+    <h2>Enter Student Details</h2>
+    <form
+        action="{{url_for('add_student') if not student else url_for('edit_student', student_id = student.studentId)}}"
+        method="post" enctype="multipart/form-data">
+
+        <label for="student-name">Student Name</label>
+        <input type="text" id="student-name" name="name" value="{{student.name | default('')}}" required>
+
+        <label for="student-id">Student Id</label>
+        <input type="text" id="student-id" name="student_id" value="{{student.studentId | default('')}}" required>
+
+        <label for="student-branch">Branch</label>
+        <select id="student-branch" name="branch" required>
+            <option value="IT">IT</option>
+            <option value="CS" {% if student and student.branch=='CS' %}selected{% endif %}>CS</option>
+            <option value="CSAI" {% if student and student.branch=='CSAI' %}selected{% endif %}>CSAI</option>
+        </select>
+
+        <label for="student-photo">Photograph</label>
+        <input type="file" name="photo" id="student-photo" accept=".jpeg, .jpg" required>
+
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</main>
+{% endblock %}
