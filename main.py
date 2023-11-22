@@ -55,7 +55,7 @@ def check_frame(frame):
         pass
 
 
-SOURCE_ADDRESS = 'https://172.70.108.106:8080/video'
+SOURCE_ADDRESS = 
 
 WINDOW_WIDTH = 640
 WINDOW_HEIGHT = 480
