@@ -3,6 +3,10 @@
 ## Overview
 The Student Surveillance project is an automated surveillance system that utilizes advanced technologies to monitor and identify students using a video stream from a camera. The system employs facial recognition to match individuals against a database of students. Upon identification, relevant parties are notified via a Telegram alert, providing details of the recognized students along with the timestamp.
 
+### Screenshots
+![Dashboard](/screenshots/dashboard.jpg)
+![Student Form](/screenshots/student_form.jpg)
+![telegram_alert](/screenshots/alert.jpeg)
 
 ## Technologies Used
 
@@ -45,7 +49,4 @@ Set up your environment variables by following these steps:
 1. To start the web interface: `python app.py`
 2. Access the web interface at `http://localhost:5000` to manage student records.
 
-### Screenshots
-![Dashboard](/screenshots/dashboard.jpg)
-![Student Form](/screenshots/student_form.jpg)
-![telegram_alert](/screenshots/alert.jpeg)
+
